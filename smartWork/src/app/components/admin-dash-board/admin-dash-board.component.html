@@ -1,0 +1,38 @@
+<div class= "container bordered"><div class= "rows">
+    <div class= "col-12">
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Requestor</th>
+                <th>Empid</th>
+                <th>Applied On</th>
+                <th>Applied For</th>
+                <th>Email</th>
+                <th>Manager</th>
+                <th>Desc</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor= "let record of records; let i = index">
+                <td>
+                  <div *ngIf = "record.ReqStatus === 'pending'; else Approved">
+                  <button class="btn btn-success" (click)= "updateStatus(record,'approved')"><i class="fa fa-check" aria-hidden="true">Approve</i></button>
+                  &nbsp;
+                  <button class= "btn btn-danger" (click)="updateStatus(record,'rejected')"><i class="fa fa-times" aria-hidden="true">Reject</i></button>
+                  </div>
+                  <ng-template #Approved>{{record.ReqStatus | uppercase}}</ng-template>
+                </td>
+                <td>{{record.UserName}}</td>
+                <td>{{record.EmpId}}</td>
+                <td>{{record.ReqDate | date}}</td>
+                <td>{{record.WorkingDate | date}}</td>
+                <td>{{record.Email}}</td>
+                <td>{{record.Manager}}</td>
+                <td>{{record.Desc}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+</div>

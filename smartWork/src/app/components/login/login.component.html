@@ -1,0 +1,31 @@
+<div class="centered">
+  <form [formGroup]="loginForm" class="container bordered">
+      <div class="row">
+        <h2>
+          <b><i><a routerLink="/login">Login</a>&nbsp;|&nbsp;</i></b>
+          <b><i><a routerLink="/register">Register</a></i></b>
+        </h2>
+      </div>
+      <div *ngIf="showError" class="error-msg">Invalid Credentials
+        <!-- <app-error [message]="message" (Close)="modalClosed()"></app-error> -->
+      </div>
+    <div class="row blue">
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" formControlName="username" class="form-control">
+      <div *ngIf= "loginForm.controls.username.touched && loginForm.controls.username.invalid" class="error-msg">
+        Please enter a username
+      </div>  
+    </div>
+    <div class="row blue">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" class="form-control">
+        <div *ngIf= "loginForm.controls.password.touched && loginForm.controls.password.invalid" class="error-msg">
+            Password feild is empty
+          </div> 
+    </div>
+    <div clas="row">
+      <button (click)="submitLoginForm()" [disabled]="loginForm.invalid" class="btn btn-primary align-right">Submit</button>
+      <button type="reset" class="btn btn-primary align-right">Reset</button>
+    </div>
+  </form>
+</div>

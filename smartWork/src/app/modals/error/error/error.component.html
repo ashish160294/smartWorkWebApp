@@ -1,0 +1,21 @@
+<button type="button" id="enableModal" #enableModal class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"></button>
+<div class="container">
+  <div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" (click) = "closeClicked()" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Error</h4>
+        </div>
+        <div class="modal-body">
+          <p>{{message}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click) = "closeClicked()" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

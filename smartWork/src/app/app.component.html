@@ -1,0 +1,23 @@
+<div class="background-image">
+  <nav class='navbar logo navbar-expand navbar-default'>
+      <div class="container-fluid">
+      <a class='navbar-brand'><img src="../assets/logo.PNG" width="200px" height="40px"></a>
+      </div>
+  </nav>
+  <div *ngIf = "userDetails && userDetails.UserName">
+    <nav class='navbar navbar-expand navbar-default'>
+      <div class="container-fluid">
+      <ul class='nav nav-pills'>
+        <li><a routerLink="/user/request">Request</a></li>
+        <li><a routerLink="/user/dashboard">DashBoard</a></li>
+        <li *ngIf = "userDetails && userDetails.UserName && userDetails.admin"><a routerLink="/user/admin/dashboard">Admin Dashboard</a></li>
+        <li class="alignright"><a (click)="logout()" >Logout</a></li>
+      </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="background">
+    <router-outlet class="background"></router-outlet>
+  </div>
+  <footer class="footer container row">All Right Reserved </footer>
+  </div>

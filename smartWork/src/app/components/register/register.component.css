@@ -1,0 +1,21 @@
+.error-msg {
+    color: red;
+}
+.blue {
+    color: rgb(112, 112, 182);
+}
+.bordered {
+    border: 3px solid rgb(49, 44, 44);
+    padding-top: 1rem;
+    padding: 3rem;
+    width: 40%;
+}
+.centered {
+    margin-top: 10rem;
+}
+.align-right {
+    float: right;
+    margin-top: 0.5rem;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+}

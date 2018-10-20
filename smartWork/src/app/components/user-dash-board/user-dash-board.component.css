@@ -1,0 +1,5 @@
+.bordered {
+    border: 3px solid rgb(49, 44, 44);
+    padding-top: 1rem;
+    padding: 3rem;
+}

@@ -1,0 +1,68 @@
+<div *ngIf="errorShow">
+    <app-error [message]="message" (Close)="modalClosed()"></app-error>
+</div>
+<div class="container centered">
+    <div class="row">
+        <h2>
+        Registration Form
+        </h2>
+    </div>
+  <form [formGroup]="reqForm" class="row bordered">
+      <div *ngIf="showError" class="error-msg">Invalid Request
+          <!-- <app-error [message]="message" (Close)="modalClosed()"></app-error> -->
+      </div>
+    <div class="row blue">
+      <label for="EmployeeName">Employee Name</label>
+      <input id="EmployeeName" name="EmployeeName" type="text" formControlName="EmployeeName" class="form-control">
+      <div *ngIf= "reqForm.controls.EmployeeName.touched && reqForm.controls.EmployeeName.invalid" class="error-msg">
+        Please enter a valid EmployeeName
+      </div>  
+    </div>
+    <div class="row blue">
+      <label for="email">Email ID</label>
+      <input id="email" name="email" type="email" formControlName="email" class="form-control">
+      <div *ngIf= "reqForm.controls.email.touched && reqForm.controls.email.invalid" class="error-msg">
+        Please enter a valid email
+      </div>  
+    </div>
+    <div class="row blue">
+      <label for="empId">EmpId</label>
+      <input id="empId" name="empId" type="text" formControlName="empId" class="form-control">
+      <div *ngIf= "reqForm.controls.empId.touched && reqForm.controls.empId.invalid" class="error-msg">
+        Please enter a valid empId
+      </div> 
+    </div>
+    <div class="row blue">
+      <label for="contact">Contact</label>
+      <input id="contact" name="contact" type="text" formControlName="contact" class="form-control">
+      <div *ngIf= "reqForm.controls.contact.touched && reqForm.controls.contact.invalid" class="error-msg">
+        Please enter a valid Contact Number
+      </div> 
+    </div>
+    <div class="row blue">
+      <label for="manager">Manager</label>
+      <input id="manager" name="manager" type="text" formControlName="manager" class="form-control">
+      <div *ngIf= "reqForm.controls.manager.touched && reqForm.controls.manager.invalid" class="error-msg">
+        Please enter a valid Manager Name
+      </div> 
+    </div>
+    <div class="row blue">
+      <label for="applyDate">Work Date</label>
+      <input id="applyDate" name="applyDate" type="date" formControlName="applyDate" class="form-control">
+      <div *ngIf= "reqForm.controls.applyDate.touched && reqForm.controls.applyDate.invalid" class="error-msg">
+        Please enter a valid Working Date
+      </div> 
+    </div>
+    <div class="row blue">
+      <label for="desc">Reason</label>
+      <textarea id="desc" name="desc" formControlName="desc" class="form-control"></textarea>
+      <div *ngIf= "reqForm.controls.desc.touched && reqForm.controls.desc.invalid" class="error-msg">
+        Please enter a valid Working Date
+      </div> 
+    </div>
+    <div class="row">
+      <button (click)="submitrequestForm()" [disabled]="!reqForm.valid" class="btn btn-primary align-right">Submit</button>
+      <button type="reset" class="btn btn-primary align-right">Reset</button>
+    </div>
+  </form>
+</div>

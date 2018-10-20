@@ -1,0 +1,25 @@
+
+.background-image {
+    background-image: url("../assets/bg.jpg");
+    background-repeat : no-repeat;
+    background-size: cover;
+
+}
+.background {
+    background-color: white;
+    opacity: 0.8
+}
+.logo {
+    min-height: 80px;
+  }
+  .alignright {
+      float: right;
+  }
+  .footer {
+    text-align: center;
+  }
+.bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,53 @@
+<div *ngIf="errorShow" class="error-msg">
+  Some Error Occured !!! 
+  <!-- <app-error [message]="message" (Close)="modalClosed()"></app-error> -->
+</div>
+<div class="centered">
+    <form [formGroup]="registrationForm" class="container bordered">
+        <div class="row">
+          <h2>
+            <b><i><a routerLink="/login">Login</a>&nbsp;|&nbsp;</i></b>
+            <b><i><a routerLink="/register">Register</a></i></b>
+          </h2></div>
+      <div class="row blue">
+        <label for="userName">UserName</label>
+        <input id="userName" name="userName" type="text" formControlName="userName" class="form-control">
+        <div *ngIf= "registrationForm.controls.userName.touched && registrationForm.controls.userName.invalid" class="error-msg">
+          Please enter a valid FirstName
+        </div>  
+      </div>
+      
+      <div class="row blue">
+          <label for="email">Email ID</label>
+          <input id="email" name="email" type="email" formControlName="email" class="form-control">
+          <div *ngIf= "registrationForm.controls.email.touched && registrationForm.controls.email.invalid" class="error-msg">
+            Please enter a valid email
+          </div>  
+        </div>
+      <div class="row blue">
+        <label for="empId">EmpId</label>
+        <input id="empId" name="empId" type="text" formControlName="empId" class="form-control">
+        <div *ngIf= "registrationForm.controls.empId.touched && registrationForm.controls.empId.invalid" class="error-msg">
+          Please enter a valid empId
+        </div> 
+      </div>
+      <div class="row blue">
+        <label for="contact">Contact</label>
+        <input id="contact" name="contact" type="text" formControlName="contact" class="form-control">
+        <div *ngIf= "registrationForm.controls.contact.touched && registrationForm.controls.contact.invalid" class="error-msg">
+          Please enter a valid Contact Number
+        </div> 
+      </div>
+      <div class="row blue">
+          <label for="password">Password</label>
+          <input id="password" type="password" formControlName="password" class="form-control">
+          <div *ngIf= "registrationForm.controls.password.touched && registrationForm.controls.password.invalid" class="error-msg">
+              Password feild is empty
+            </div> 
+      </div>
+      <div clas="row">
+        <button (click)="submitregistrationForm()" [disabled]="!registrationForm.valid" class="btn btn-primary align-right">Submit</button>
+        <button type="reset" class="btn btn-primary align-right">Reset</button>
+      </div>
+    </form>
+  </div>
